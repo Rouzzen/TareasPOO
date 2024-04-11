@@ -25,6 +25,12 @@ public class Mascota {
     public void incrementarSalud(int cant){
         this.salud = this.salud + cant;
     }
+    public void incrementarEnergia(int cant){
+        this.energia = this.energia + cant;
+    }
+    public void incrementarFelicidad(int cant){
+        this.felicidad = this.felicidad + cant;
+    }
 
     public void afectar() {
         if (this.salud < 10) {

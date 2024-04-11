@@ -1,43 +1,31 @@
 public abstract class Item {
+    protected int id;
     protected String nombre;
+    protected int cantidad;
 
-    public Item(String nombre){
+    public Item(int id, String nombre, int cantidad){
+        this.id = id;
         this.nombre = nombre;
+        this.cantidad = cantidad;
     }
+
     public abstract void printItemAplicado(Mascota mascota);
-}
 
-public class Comida extends Item {
-    public Comida(String nombre) {
-        super(nombre);
+    public int getId() {
+        return id;
     }
 
-    @Override
-    public void printItemAplicado(Mascota mascota) {
-        mascota.incrementarSalud(20);
-        mascota.incrementarEnergia(20);
-        System.out.println("Dando de comer: " + nombre);
-    }
-}
-public class Medicina extends Item {
-    public Medicina(String nombre) {
-        super(nombre);
+    public String getNombre() {
+        return nombre;
     }
 
-    @Override
-    public void printItemAplicado(Mascota mascota) {
-        mascota.incrementarSalud(40);
-        System.out.println("Aplicando Medicamento: " + nombre);
+    public int getCantidad() {
+        return cantidad;
     }
-}
-public class Juguete extends Item {
-    public Juguete(String nombre) {
-        super(nombre);
+    
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
-    @Override
-    public void printItemAplicado(Mascota mascota) {
-        mascota.incrementarFelicidad(30);
-        System.out.println("Usando Juguete: " + nombre);
-    }
 }
+
