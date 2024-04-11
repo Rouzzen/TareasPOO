@@ -35,10 +35,13 @@ public class Main {
             int cantidad = Integer.parseInt(item_csv[3]);
             
             if (tipoItem.equals("Comida")) {
+                System.out.println("Se agregó la comida");
                 inventario.agregarItem(new Comida(id, nombreItem, cantidad));
             } else if (tipoItem.equals("Medicina")) {
+                System.out.println("Se agregó la medicina");
                 inventario.agregarItem(new Medicina(id, nombreItem, cantidad));
             } else if (tipoItem.equals("Juguete")) {
+                System.out.println("Se agregó el juguete");
                 inventario.agregarItem(new Juguete(id, nombreItem, cantidad));
             } else {
                 System.out.println("Tipo de ítem desconocido: " + tipoItem);
