@@ -34,8 +34,15 @@ public class Main {
             String nombreItem = item_csv[2];
             int cantidad = Integer.parseInt(item_csv[3]);
             
-            /* Completar código para inicialización de inventario en la etapa
-            que corresponda */
+            if (tipoItem.equals("Comida")) {
+                inventario.agregarItem(new Comida(id, nombreItem, cantidad));
+            } else if (tipoItem.equals("Medicina")) {
+                inventario.agregarItem(new Medicina(id, nombreItem, cantidad));
+            } else if (tipoItem.equals("Juguete")) {
+                inventario.agregarItem(new Juguete(id, nombreItem, cantidad));
+            } else {
+                System.out.println("Tipo de ítem desconocido: " + tipoItem);
+            }
         }
     }
     
@@ -52,5 +59,5 @@ public class Main {
     }
 
     private Mascota mascota;
-    // private Inventario inventario; // Descomentar cuando se haya creado el inventario
+    private Inventario inventario;
 }
