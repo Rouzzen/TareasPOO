@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Mascota {
     /* Completar con los métodos, atributos y constructor de Mascota 
     dependiendo de la etapa */
@@ -67,5 +70,21 @@ public class Mascota {
             estado = Estado.Feliz;
         }
         return estado;
+    }
+
+    public String getNombre(){
+        return nombre;
+    }
+    public float getEdad(){
+        return edad;
+    }
+    public int getSalud(){
+        return salud;
+    }
+    public int getEnergia(){
+        return energia;
+    }
+    public int getFelicidad(){
+        return felicidad;
     }
 }
