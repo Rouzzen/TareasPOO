@@ -70,18 +70,18 @@ public class Mascota {
     }
 
     public String getNombre(){
-        return nombre;
+        return this.nombre;
     }
     public float getEdad(){
-        return edad;
+        return this.edad;
     }
     public int getSalud(){
-        return salud;
+        return this.salud;
     }
     public int getEnergia(){
-        return energia;
+        return this.energia;
     }
     public int getFelicidad(){
-        return felicidad;
+        return this.felicidad;
     }
 }
