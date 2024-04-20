@@ -4,7 +4,7 @@ public class Juguete extends Item {
     }
 
     @Override
-    public void printItemAplicado(Mascota mascota) {
+    public void ItemAplicado(Mascota mascota) {
         mascota.incrementarFelicidad(30);
         System.out.println("Usando Juguete: " + nombre);
     }

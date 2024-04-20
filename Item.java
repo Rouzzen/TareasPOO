@@ -9,7 +9,7 @@ public abstract class Item {
         this.cantidad = cantidad;
     }
 
-    public abstract void printItemAplicado(Mascota mascota);
+    public abstract void ItemAplicado(Mascota mascota);
 
     public int getId() {
         return id;

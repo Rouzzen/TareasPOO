@@ -4,7 +4,7 @@ public class Comida extends Item {
     }
 
     @Override
-    public void printItemAplicado(Mascota mascota) {
+    public void ItemAplicado(Mascota mascota) {
         mascota.incrementarSalud(20);
         mascota.incrementarEnergia(20);
         System.out.println("Dando de comer: " + getNombre());

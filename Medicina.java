@@ -4,7 +4,7 @@ public class Medicina extends Item {
     }
 
     @Override
-    public void printItemAplicado(Mascota mascota) {
+    public void ItemAplicado(Mascota mascota) {
         mascota.incrementarSalud(40);
         System.out.println("Aplicando Medicamento: " + nombre);
     }
