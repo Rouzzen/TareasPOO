@@ -19,8 +19,14 @@ public class Mascota {
     public void tick(){
         this.edad = this.edad + 0.5;
         this.salud = this.salud - 5;
-        this.energia = this.energia - 5;
-        this.felicidad = this.felicidad - 5;
+        if (this.energia-5 <= 0) {
+            this.energia = 0;
+        }
+        else {this.energia = this.energia - 5;}
+        if (this.felicidad-5 <= 0) {
+            this.felicidad = 0;
+        }
+        else {this.felicidad = this.felicidad - 5;}
     }
     public void incrementarSalud(int cant){
         if (this.salud + cant >= 100) {
