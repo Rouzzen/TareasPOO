@@ -52,8 +52,7 @@ public class Main {
         }
     }
     
-    public void executeAction(Scanner in, PrintStream out){
-        boolean running = true;
+    public void executeAction(Scanner in, PrintStream out){ 
         double tiempo = 0.0;
         boolean condicion = true;
         while (condicion) {
@@ -63,6 +62,7 @@ public class Main {
             out.println("3. Terminar el programa");
             int choice1 = in.nextInt();
             in.nextLine();
+            boolean running = true;
             switch (choice1) {
                 case 1:
                     while (running){
@@ -96,6 +96,7 @@ public class Main {
                                             jugueteSelec = juguete;
                                             tiempo = tiempo + 0.5;
                                             mascota.tick();
+                                            running = false;
                                             break;
                                         }
                                     }
@@ -131,6 +132,7 @@ public class Main {
                                             comidaSelec = comida;
                                             tiempo = tiempo + 0.5;
                                             mascota.tick();
+                                            running = false;
                                             break;
                                         }
                                     }
@@ -165,6 +167,7 @@ public class Main {
                                             comidaSelec = medicina;
                                             tiempo = tiempo + 0.5;
                                             mascota.tick();
+                                            running = false;
                                             break;
                                         }
                                     }
