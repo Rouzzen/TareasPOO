@@ -68,10 +68,10 @@ public class Mascota {
     }
 
     public void Dormir(){
-        this.edad = this.edad + 1/2;
+        this.edad = this.edad + 0.5;
         this.energia = 100;
-        this.felicidad = this.felicidad +15;
-        this.salud = this.salud + 15;
+        this.incrementarFelicidad(15);
+        this.incrementarSalud(15);
     }
 
     public Estado getEstado() {

@@ -20,7 +20,6 @@ public class Main {
         stage1.readConfiguration(in);
         stage1.printEstado(0, null);
         stage1.printEstado(1,null);
-        
 
         stage1.executeAction(new Scanner(System.in), System.out);
     }
@@ -89,6 +88,8 @@ public class Main {
                                 mascota.Dormir();
                                 printEstado(choice, out);
                                 tiempo = tiempo + 0.5;
+                                running = false;
+                                break;
                             case 1:
                                 List<Juguete> juguetes = inventario.obtenerJuguetes();
                                 if (!juguetes.isEmpty()){
