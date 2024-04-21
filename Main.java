@@ -110,6 +110,7 @@ public class Main {
                                     running = false;
                                     tiempo = tiempo + 0.5;
                                     mascota.tick();
+                                    break;
         
                                 }else{
                                     System.out.println("No hay juguetes disponibles en el inventario.");
@@ -148,6 +149,7 @@ public class Main {
                                     tiempo = tiempo + 0.5;
                                     mascota.tick();
                                     running = false;
+                                    break;
         
                                 }else{
                                     System.out.println("No hay alimentos disponibles en el inventario.");
