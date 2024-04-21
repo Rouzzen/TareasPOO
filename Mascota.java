@@ -3,21 +3,21 @@ public class Mascota {
     dependiendo de la etapa */
     @SuppressWarnings("unused")
     private String nombre;
-    private float edad;
+    private double edad;
     private int salud;
     private int energia;
     private int felicidad;
 
     public Mascota(String nombre) {
         this.nombre = nombre;
-        this.edad = 0;
+        this.edad = 0.0;
         this.salud = 100;
         this.energia = 100;
         this.felicidad = 50;
     }
 
     public void tick(){
-        this.edad = this.edad + 1/2;
+        this.edad = this.edad + 0.5;
         this.salud = this.salud - 5;
         this.energia = this.energia - 5;
         this.felicidad = this.felicidad - 5;
@@ -86,7 +86,7 @@ public class Mascota {
     public String getNombre(){
         return this.nombre;
     }
-    public float getEdad(){
+    public double getEdad(){
         return this.edad;
     }
     public int getSalud(){
