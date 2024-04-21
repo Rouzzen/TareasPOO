@@ -107,6 +107,7 @@ public class Main {
                                     } else {
                                         System.out.println("No Ingresaste correctamente la ID del juguete");
                                     }
+                                    running = false;
                                     tiempo = tiempo + 0.5;
                                     mascota.tick();
         
@@ -114,6 +115,7 @@ public class Main {
                                     System.out.println("No hay juguetes disponibles en el inventario.");
                                     tiempo = tiempo + 0.5;
                                     mascota.tick();
+                                    running = false;
                                 }
         
                             case 2:
@@ -145,11 +147,13 @@ public class Main {
                                     }
                                     tiempo = tiempo + 0.5;
                                     mascota.tick();
+                                    running = false;
         
                                 }else{
                                     System.out.println("No hay alimentos disponibles en el inventario.");
                                     tiempo = tiempo + 0.5;
                                     mascota.tick();
+                                    running = false;
                                 }
                             case 3:
                                 List<Medicina> medicinas = inventario.obtenerMedicina();
@@ -180,11 +184,13 @@ public class Main {
                                     }
                                     tiempo = tiempo + 0.5;
                                     mascota.tick();
+                                    running = false;
         
                                 }else{
                                     System.out.println("No hay medicinas disponibles en el inventario.");
                                     tiempo = tiempo + 0.5;
                                     mascota.tick();
+                                    running = false;
                                 }
                         }
                         
@@ -195,9 +201,11 @@ public class Main {
                     out.println("Pasando el tiempo . . .");
                     mascota.tick();
                     tiempo = tiempo + 0.5;
+                    running = false;
                     break;
                 case 3:
                     condicion = false;
+                    running = false;
                     break;
             }
         }
