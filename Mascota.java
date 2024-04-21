@@ -46,6 +46,13 @@ public class Mascota {
         }
     }
 
+    public void Dormir(){
+        this.edad = this.edad + 1/2;
+        this.energia = 100;
+        this.felicidad = this.felicidad +15;
+        this.salud = this.salud + 15;
+    }
+
     public Estado getEstado() {
         Estado estado = Estado.Neutro;
         if (this.salud == 0 || this.energia == 0 || this.edad >= 15) {

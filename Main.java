@@ -54,101 +54,148 @@ public class Main {
     
     public void executeAction(Scanner in, PrintStream out){
         boolean running = true;
-        while (running){
-            out.println("Seleccione una accion:");
-            out.println("1. Jugar con "+ mascota.getNombre());
-            out.println("2. Alimentar a " + mascota.getNombre());
-            out.println("3. Usar Medicina");
-
-            int choice = in.nextInt();
+        double tiempo = 0.0;
+        boolean condicion = true;
+        while (condicion) {
+            out.println("MENU");
+            out.println("1. Interactuar con "+ mascota.getNombre());
+            out.println("2. Continuar el paso del tiempo");
+            out.println("3. Terminar el programa");
+            int choice1 = in.nextInt();
             in.nextLine();
-
-            switch(choice){
+            switch (choice1) {
                 case 1:
-                    List<Juguete> juguetes = inventario.obtenerJuguetes();
-                    if (!juguetes.isEmpty()){
-                        System.out.println("Juguetes disponibles en el inventario:");
-                        for (Juguete juguete : juguetes) {
-                            System.out.println(juguete.getNombre() + ", ID: " + juguete.getId());
+                    while (running){
+                        out.println("Seleccione una accion:");
+                        out.println("0. Dormir ");
+                        out.println("1. Jugar con "+ mascota.getNombre());
+                        out.println("2. Alimentar a " + mascota.getNombre());
+                        out.println("3. Usar Medicina");
+        
+                        int choice = in.nextInt();
+                        in.nextLine();
+        
+                        switch(choice){
+                            case 0:
+                                mascota.Dormir();
+                                printEstado(choice, out);
+                                tiempo = tiempo + 0.5;
+                            case 1:
+                                List<Juguete> juguetes = inventario.obtenerJuguetes();
+                                if (!juguetes.isEmpty()){
+                                    System.out.println("Juguetes disponibles en el inventario:");
+                                    for (Juguete juguete : juguetes) {
+                                        System.out.println(juguete.getNombre() + ", ID: " + juguete.getId());
+                                    }
+                                    System.out.print("¿con cual te gustaria jugar? ");
+                                    int idJugueteSelec = Integer.parseInt(in.nextLine());
+                                    
+                                    Juguete jugueteSelec = null;
+                                    for (Juguete juguete : juguetes){
+                                        if (juguete.getId() == idJugueteSelec){
+                                            jugueteSelec = juguete;
+                                            tiempo = tiempo + 0.5;
+                                            mascota.tick();
+                                            break;
+                                        }
+                                    }
+                                    if (jugueteSelec != null) {
+                                        System.out.println("Ha seleccionado el juguete: " + jugueteSelec.getNombre());
+                                        inventario.usarItem(idJugueteSelec, mascota);
+                                        printEstado(0, null);
+                                    } else {
+                                        System.out.println("No Ingresaste correctamente la ID del juguete");
+                                    }
+                                    tiempo = tiempo + 0.5;
+                                    mascota.tick();
+        
+                                }else{
+                                    System.out.println("No hay juguetes disponibles en el inventario.");
+                                    tiempo = tiempo + 0.5;
+                                    mascota.tick();
+                                }
+        
+                            case 2:
+                                List<Comida> comidas = inventario.obtenerComida();
+                                if (!comidas.isEmpty()){
+                                    System.out.println("Alimentos disponibles en el inventario:");
+                                    for (Comida comida : comidas) {
+                                        System.out.println(comida.getNombre() + ", ID: " + comida.getId());
+                                    }
+                                    System.out.print("¿cual te gustaria darle de comer? ");
+                                    int idComidaSelec = Integer.parseInt(in.nextLine());
+                                    
+                                    Comida comidaSelec = null;
+                                    for (Comida comida : comidas){
+                                        if (comida.getId() == idComidaSelec){
+                                            comidaSelec = comida;
+                                            tiempo = tiempo + 0.5;
+                                            mascota.tick();
+                                            break;
+                                        }
+                                    }
+                                    if (comidaSelec != null) {
+                                        System.out.println("Ha seleccionado la comida: " + comidaSelec.getNombre());
+                                        inventario.usarItem(idComidaSelec, mascota);
+                                        printEstado(0, null);
+                                    } else {
+                                        System.out.println("No Ingresaste correctamente la ID del alimento");
+                                    }
+                                    tiempo = tiempo + 0.5;
+                                    mascota.tick();
+        
+                                }else{
+                                    System.out.println("No hay alimentos disponibles en el inventario.");
+                                    tiempo = tiempo + 0.5;
+                                    mascota.tick();
+                                }
+                            case 3:
+                                List<Medicina> medicinas = inventario.obtenerMedicina();
+                                if (!medicinas.isEmpty()){
+                                    System.out.println("Medicinas disponibles en el inventario:");
+                                    for (Medicina medicina : medicinas) {
+                                        System.out.println(medicina.getNombre() + ", ID: " + medicina.getId());
+                                    }
+                                    System.out.print("¿cual te gustaria darle a "+ mascota.getNombre()+"? ");
+                                    int idMedicinaSelec = Integer.parseInt(in.nextLine());
+                                    
+                                    Medicina comidaSelec = null;
+                                    for (Medicina medicina : medicinas){
+                                        if (medicina.getId() == idMedicinaSelec){
+                                            comidaSelec = medicina;
+                                            tiempo = tiempo + 0.5;
+                                            mascota.tick();
+                                            break;
+                                        }
+                                    }
+                                    if (comidaSelec != null) {
+                                        System.out.println("Ha seleccionado la medicina: " + comidaSelec.getNombre());
+                                        inventario.usarItem(idMedicinaSelec, mascota);
+                                        printEstado(0, null);
+                                    } else {
+                                        System.out.println("No Ingresaste correctamente la ID de la medicina");
+                                    }
+                                    tiempo = tiempo + 0.5;
+                                    mascota.tick();
+        
+                                }else{
+                                    System.out.println("No hay medicinas disponibles en el inventario.");
+                                    tiempo = tiempo + 0.5;
+                                    mascota.tick();
+                                }
                         }
-                        System.out.print("¿con cual te gustaria jugar? ");
-                        int idJugueteSelec = Integer.parseInt(in.nextLine());
                         
-                        Juguete jugueteSelec = null;
-                        for (Juguete juguete : juguetes){
-                            if (juguete.getId() == idJugueteSelec){
-                                jugueteSelec = juguete;
-                                break;
-                            }
-                        }
-                        if (jugueteSelec != null) {
-                            System.out.println("Ha seleccionado el juguete: " + jugueteSelec.getNombre());
-                            inventario.usarItem(idJugueteSelec, mascota);
-                            printEstado(0, null);
-                        } else {
-                            System.out.println("No Ingresaste correctamente la ID del juguete");
-                        }
-
-                    }else{
-                        System.out.println("No hay juguetes disponibles en el inventario.");
                     }
-
+                    break;
+            
                 case 2:
-                    List<Comida> comidas = inventario.obtenerComida();
-                    if (!comidas.isEmpty()){
-                        System.out.println("Alimentos disponibles en el inventario:");
-                        for (Comida comida : comidas) {
-                            System.out.println(comida.getNombre() + ", ID: " + comida.getId());
-                        }
-                        System.out.print("¿cual te gustaria darle de comer? ");
-                        int idComidaSelec = Integer.parseInt(in.nextLine());
-                        
-                        Comida comidaSelec = null;
-                        for (Comida comida : comidas){
-                            if (comida.getId() == idComidaSelec){
-                                comidaSelec = comida;
-                                break;
-                            }
-                        }
-                        if (comidaSelec != null) {
-                            System.out.println("Ha seleccionado la comida: " + comidaSelec.getNombre());
-                            inventario.usarItem(idComidaSelec, mascota);
-                            printEstado(0, null);
-                        } else {
-                            System.out.println("No Ingresaste correctamente la ID del alimento");
-                        }
-
-                    }else{
-                        System.out.println("No hay alimentos disponibles en el inventario.");
-                    }
+                    out.println("Pasando el tiempo . . .");
+                    mascota.tick();
+                    tiempo = tiempo + 0.5;
+                    break;
                 case 3:
-                    List<Medicina> medicinas = inventario.obtenerMedicina();
-                    if (!medicinas.isEmpty()){
-                        System.out.println("Medicinas disponibles en el inventario:");
-                        for (Medicina medicina : medicinas) {
-                            System.out.println(medicina.getNombre() + ", ID: " + medicina.getId());
-                        }
-                        System.out.print("¿cual te gustaria darle a "+ mascota.getNombre()+"? ");
-                        int idMedicinaSelec = Integer.parseInt(in.nextLine());
-                        
-                        Medicina comidaSelec = null;
-                        for (Medicina medicina : medicinas){
-                            if (medicina.getId() == idMedicinaSelec){
-                                comidaSelec = medicina;
-                                break;
-                            }
-                        }
-                        if (comidaSelec != null) {
-                            System.out.println("Ha seleccionado la medicina: " + comidaSelec.getNombre());
-                            inventario.usarItem(idMedicinaSelec, mascota);
-                            printEstado(0, null);
-                        } else {
-                            System.out.println("No Ingresaste correctamente la ID de la medicina");
-                        }
-
-                    }else{
-                        System.out.println("No hay medicinas disponibles en el inventario.");
-                    }
+                    condicion = false;
+                    break;
             }
         }
     }
