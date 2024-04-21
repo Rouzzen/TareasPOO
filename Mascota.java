@@ -94,7 +94,7 @@ public class Mascota {
             estado = Estado.Feliz;
             System.out.println("Estado:  |(^_^)/ Weeeeeh!");
         }
-        System.out.println("Estado: (-_-) Meh....");
+        else{System.out.println("Estado: (-_-) Meh....");}
         return estado;
     }
 
