@@ -56,6 +56,10 @@ public class Main {
         double tiempo = 0.0;
         boolean condicion = true;
         while (condicion) {
+            if (mascota.getEdad() >= 15.0) {
+                out.println("Tu mascota ha muerto x_x");
+                break;   
+            }
             out.println("MENU");
             out.println("1. Interactuar con "+ mascota.getNombre());
             out.println("2. Continuar el paso del tiempo");
@@ -63,6 +67,7 @@ public class Main {
             int choice1 = in.nextInt();
             in.nextLine();
             boolean running = true;
+            
             switch (choice1) {
                 case 1:
                     while (running){

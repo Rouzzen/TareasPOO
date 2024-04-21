@@ -23,13 +23,28 @@ public class Mascota {
         this.felicidad = this.felicidad - 5;
     }
     public void incrementarSalud(int cant){
-        this.salud = this.salud + cant;
+        if (this.salud + cant >= 100) {
+            this.salud = 100;
+        }
+        else {
+            this.salud = this.salud + cant;
+        }
     }
     public void incrementarEnergia(int cant){
-        this.energia = this.energia + cant;
+        if (this.energia + cant >= 100) {
+            this.energia = 100;
+        }
+        else {
+            this.energia = this.energia + cant;
+        }
     }
     public void incrementarFelicidad(int cant){
-        this.felicidad = this.felicidad + cant;
+        if (this.felicidad + cant >= 100) {
+            this.felicidad = 100;
+        }
+        else {
+            this.felicidad = this.felicidad + cant;
+        }
     }
 
     public void afectar() {
