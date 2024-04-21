@@ -60,6 +60,10 @@ public class Main {
                 out.println("Tu mascota ha muerto x_x");
                 break;   
             }
+            if (mascota.getEstado() == Estado.Muerto) {
+                out.println("Tu mascota ha muerto x_x");
+                break;   
+            }
             out.println("MENU");
             out.println("1. Interactuar con "+ mascota.getNombre());
             out.println("2. Continuar el paso del tiempo");
