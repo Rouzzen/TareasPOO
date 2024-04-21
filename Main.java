@@ -92,7 +92,7 @@ public class Main {
                                     for (Juguete juguete : juguetes) {
                                         System.out.println(juguete.getNombre() + ", ID: " + juguete.getId());
                                     }
-                                    System.out.print("¿con cual te gustaria jugar? ");
+                                    System.out.print("con cual te gustaria jugar? ");
                                     int idJugueteSelec = Integer.parseInt(in.nextLine());
                                     
                                     Juguete jugueteSelec = null;
@@ -119,9 +119,8 @@ public class Main {
         
                                 }else{
                                     System.out.println("No hay juguetes disponibles en el inventario.");
-                                    tiempo = tiempo + 0.5;
-                                    mascota.tick();
                                     running = false;
+                                    break;
                                 }
         
                             case 2:
@@ -131,7 +130,7 @@ public class Main {
                                     for (Comida comida : comidas) {
                                         System.out.println(comida.getNombre() + ", ID: " + comida.getId());
                                     }
-                                    System.out.print("¿cual te gustaria darle de comer? ");
+                                    System.out.print("cual te gustaria darle de comer? ");
                                     int idComidaSelec = Integer.parseInt(in.nextLine());
                                     
                                     Comida comidaSelec = null;
@@ -158,9 +157,8 @@ public class Main {
         
                                 }else{
                                     System.out.println("No hay alimentos disponibles en el inventario.");
-                                    tiempo = tiempo + 0.5;
-                                    mascota.tick();
                                     running = false;
+                                    break;
                                 }
                             case 3:
                                 List<Medicina> medicinas = inventario.obtenerMedicina();
@@ -169,7 +167,7 @@ public class Main {
                                     for (Medicina medicina : medicinas) {
                                         System.out.println(medicina.getNombre() + ", ID: " + medicina.getId());
                                     }
-                                    System.out.print("¿cual te gustaria darle a "+ mascota.getNombre()+"? ");
+                                    System.out.print("cual te gustaria darle a "+ mascota.getNombre()+"? ");
                                     int idMedicinaSelec = Integer.parseInt(in.nextLine());
                                     
                                     Medicina comidaSelec = null;
@@ -195,9 +193,8 @@ public class Main {
         
                                 }else{
                                     System.out.println("No hay medicinas disponibles en el inventario.");
-                                    tiempo = tiempo + 0.5;
-                                    mascota.tick();
                                     running = false;
+                                    break;
                                 }
                         }
                         
@@ -208,9 +205,11 @@ public class Main {
                     out.println("Pasando el tiempo . . .");
                     mascota.tick();
                     tiempo = tiempo + 0.5;
+                    printEstado(0, null);
                     running = false;
                     break;
                 case 3:
+                    out.println("Muchas gracias por jugar con "+mascota.getNombre());
                     condicion = false;
                     running = false;
                     break;
