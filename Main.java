@@ -95,7 +95,7 @@ public class Main {
                                 if (!juguetes.isEmpty()){
                                     System.out.println("Juguetes disponibles en el inventario:");
                                     for (Juguete juguete : juguetes) {
-                                        System.out.println(juguete.getNombre() + ", ID: " + juguete.getId());
+                                        System.out.println(juguete.getNombre() + ", ID: " + juguete.getId()+ ", Cantidad: "+ juguete.getCantidad());
                                     }
                                     System.out.print("con cual te gustaria jugar? ");
                                     int idJugueteSelec = Integer.parseInt(in.nextLine());
@@ -133,7 +133,7 @@ public class Main {
                                 if (!comidas.isEmpty()){
                                     System.out.println("Alimentos disponibles en el inventario:");
                                     for (Comida comida : comidas) {
-                                        System.out.println(comida.getNombre() + ", ID: " + comida.getId());
+                                        System.out.println(comida.getNombre() + ", ID: " + comida.getId()+ ", Cantidad: "+ comida.getCantidad());
                                     }
                                     System.out.print("cual te gustaria darle de comer? ");
                                     int idComidaSelec = Integer.parseInt(in.nextLine());
@@ -170,7 +170,7 @@ public class Main {
                                 if (!medicinas.isEmpty()){
                                     System.out.println("Medicinas disponibles en el inventario:");
                                     for (Medicina medicina : medicinas) {
-                                        System.out.println(medicina.getNombre() + ", ID: " + medicina.getId());
+                                        System.out.println(medicina.getNombre() + ", ID: " + medicina.getId()+ ", Cantidad: "+ medicina.getCantidad());
                                     }
                                     System.out.print("cual te gustaria darle a "+ mascota.getNombre()+"? ");
                                     int idMedicinaSelec = Integer.parseInt(in.nextLine());
