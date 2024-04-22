@@ -20,7 +20,6 @@ public class Inventario {
             }
         }
     }
-    // FALTA DEFINIR LO DEL TIEMPO
     public void usarItem(int id, Mascota mascota) {
         for (Item item : items) {
             if (item.getId() == id) {
