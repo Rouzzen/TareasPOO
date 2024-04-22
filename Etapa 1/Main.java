@@ -33,8 +33,6 @@ public class Main {
     }
 
     public void printEstado(float step, PrintStream out){
-        /* Completar método que muestra el estado de la Mascota y del inventario
-        dependiendo de la etapa */
         if (step == 0) {
             System.out.println("-----------");
             System.out.println("Parametros");
