@@ -39,7 +39,7 @@ public class Mascota {
         }
     }
 
-    // METODO PARA INCREMENTAR ENERGÍA DE LA MASCOTA
+    // METODO PARA INCREMENTAR ENERGIA DE LA MASCOTA
     public void incrementarEnergia(int cant){
         if (this.energia + cant >= 100) {
             this.energia = 100;
