@@ -1,5 +1,5 @@
 JAVA_FILES := $(wildcard *.java)
-CLASS_FILES := $(JAVA_FILES:.java=.class)
+CLASS_FILES := $(patsubst %.java,%.class,$(JAVA_FILES))
 CONFIG_FILE := config.csv
 
 # Regla predeterminada: compilar todos los archivos .java
