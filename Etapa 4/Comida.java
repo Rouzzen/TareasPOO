@@ -4,6 +4,7 @@ public class Comida extends Item {
     }
 
     @Override
+    // APLICA ITEM COMIDA A MASCOTA
     public void ItemAplicado(Mascota mascota) {
         mascota.incrementarSalud(20);
         mascota.incrementarEnergia(20);

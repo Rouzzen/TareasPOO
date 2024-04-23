@@ -4,14 +4,17 @@ import java.util.List;
 public class Inventario {
     private ArrayList<Item> items;
 
+    // INSTANCIACION DE INVENTARIO
     public Inventario(){
         this.items = new ArrayList<>();
     }
 
+    // METODO PARA AGREGAR ITEM AL INVENTARIO
     public void agregarItem(Item item){
         items.add(item);
     }
 
+    // METODO PARA ELIMINAR ITEM DEL INVENTARIO
     public void eliminarItem(int id) {
         for (int i = 0; i < items.size(); i++) {
             if (items.get(i).getId() == id) {
@@ -20,9 +23,12 @@ public class Inventario {
             }
         }
     }
+
+    // METODO PARA USAR UN ITEM
     public void usarItem(int id, Mascota mascota) {
         for (Item item : items) {
             if (item.getId() == id) {
+                // USANDO ITEM Y DESCONTANDO DEL INVENTARIO
                 if (item.getCantidad() > 0) {
                     System.out.println("Usando " + item.getNombre() + "...");
                     item.ItemAplicado(mascota);
@@ -31,7 +37,9 @@ public class Inventario {
                         eliminarItem(item.getId());
                         System.out.println("Usaste el último " + item.getNombre() + " que te quedaba. Se eliminó del inventario");
                     }
-                } else {
+                } 
+                // NO QUEDA CANTIDAD EN EL INVENTARIO
+                else {
                     System.out.println("No hay suficiente cantidad de " + item.getNombre() + " en el inventario.");
                 }
                 return;
@@ -40,6 +48,7 @@ public class Inventario {
         System.out.println("No tienes este item en tu inventario");
     }
 
+    // PRINT DEL INVENTARIO
     public void mostrarInventario() {
         System.out.println("-----------");
         System.out.println("Inventario:");
@@ -49,7 +58,7 @@ public class Inventario {
         }
     }
 
-
+    // LISTA DE JUGUETES
     public List<Juguete> obtenerJuguetes(){
         List<Juguete> juguetes = new ArrayList<>();
         for (Item item : items){
@@ -60,6 +69,7 @@ public class Inventario {
         return juguetes;
     }
     
+    // LISTA DE MEDICINA
     public List<Medicina> obtenerMedicina(){
         List<Medicina> medicinas = new ArrayList<>();
         for (Item item : items){
@@ -70,6 +80,7 @@ public class Inventario {
         return medicinas;
     }
     
+    // LISTA DE COMIDA
     public List<Comida> obtenerComida(){
         List<Comida> comidas = new ArrayList<>();
         for (Item item : items){

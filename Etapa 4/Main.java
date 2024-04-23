@@ -25,13 +25,13 @@ public class Main {
     }
 
     public void readConfiguration(Scanner in){
-        // Creación de mascota
+        // CREACION DE MASCOTA
         String nombre_mascota = in.nextLine();
         mascota = new Mascota(nombre_mascota);
         System.out.println("Bienvenido a tu mascota virtual, felicidades por adoptar a " + nombre_mascota);
-        // Creación de inventario vacío
+        // CREACIÓN DE INVENTARIO VACÍO
         inventario = new Inventario();
-        // Llenando inventario
+        // LLENANDO INVENTARIO
         while (in.hasNextLine()) {
             String linea = in.nextLine();
             String[] item_csv = linea.split(";");
@@ -51,14 +51,17 @@ public class Main {
         }
     }
     
+    // EJECUTAR ACCION
     public void executeAction(Scanner in, PrintStream out){ 
         double tiempo = 0.0;
         boolean condicion = true;
         while (condicion) {
+            // MASCOTA MUERE POR EDAD
             if (mascota.getEdad() >= 15.0) {
                 out.println("Tu mascota ha muerto x_x");
                 break;   
             }
+            // MASCOTA MUERE POR OTRA RAZON
             if (mascota.getEstado() == Estado.Muerto) {
                 out.println("Tu mascota ha muerto x_x");
                 break;   
@@ -73,6 +76,7 @@ public class Main {
             boolean running = true;
             
             switch (choice1) {
+                // INTERACTUAR
                 case 1:
                     while (running){
                         out.println("Seleccione una accion:");
@@ -85,12 +89,14 @@ public class Main {
                         in.nextLine();
         
                         switch(choice){
+                            // MASCOTA DUERME
                             case 0:
                                 mascota.Dormir();
                                 printEstado(choice, out);
                                 tiempo = tiempo + 0.5;
                                 running = false;
                                 break;
+                            // MASCOTA JUEGA
                             case 1:
                                 List<Juguete> juguetes = inventario.obtenerJuguetes();
                                 if (!juguetes.isEmpty()){
@@ -128,6 +134,7 @@ public class Main {
                                     running = false;
                                     break;
                                 }
+                            // MASCOTA COME
                             case 2:
                                 List<Comida> comidas = inventario.obtenerComida();
                                 if (!comidas.isEmpty()){
@@ -165,6 +172,7 @@ public class Main {
                                     running = false;
                                     break;
                                 }
+                            // MASCOTA USA MEDICINA
                             case 3:
                                 List<Medicina> medicinas = inventario.obtenerMedicina();
                                 if (!medicinas.isEmpty()){
@@ -205,10 +213,12 @@ public class Main {
                         
                     }
                     break;
+                // MOSTRAR INVENTARIO
                 case 2:
                     inventario.mostrarInventario();
                     running = false;
                     break;
+                // PASAR EL TIEMPO
                 case 3:
                     out.println("Pasando el tiempo . . .");
                     mascota.tick();
@@ -216,6 +226,7 @@ public class Main {
                     printEstado(0, null);
                     running = false;
                     break;
+                // FIN DEL JUEGO
                 case 4:
                     out.println("Muchas gracias por jugar con "+mascota.getNombre());
                     condicion = false;
