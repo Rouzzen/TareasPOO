@@ -29,7 +29,7 @@ public class Main {
         String nombre_mascota = in.nextLine();
         mascota = new Mascota(nombre_mascota);
         System.out.println("Bienvenido a tu mascota virtual, felicidades por adoptar a " + nombre_mascota);
-        // CREACIÓN DE INVENTARIO VACÍO
+        // CREACION DE INVENTARIO VACIO
         inventario = new Inventario();
         // LLENANDO INVENTARIO
         Comida comida1 = new Comida(1, "Queso", 5);
