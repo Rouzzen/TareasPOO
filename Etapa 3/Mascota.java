@@ -1,6 +1,4 @@
 public class Mascota {
-    /* Completar con los métodos, atributos y constructor de Mascota 
-    dependiendo de la etapa */
     @SuppressWarnings("unused")
     private String nombre;
     private double edad;
@@ -8,6 +6,7 @@ public class Mascota {
     private int energia;
     private int felicidad;
 
+    // INSTANCIACION STATS MASCOTA INICIAL
     public Mascota(String nombre) {
         this.nombre = nombre;
         this.edad = 0.0;
@@ -28,6 +27,8 @@ public class Mascota {
         }
         else {this.felicidad = this.felicidad - 5;}
     }
+
+    // METODO PARA INCREMENTAR SALUD DE LA MASCOTA
     public void incrementarSalud(int cant){
         if (this.salud + cant >= 100) {
             this.salud = 100;
@@ -36,6 +37,8 @@ public class Mascota {
             this.salud = this.salud + cant;
         }
     }
+
+    // METODO PARA INCREMENTAR ENERGÍA DE LA MASCOTA
     public void incrementarEnergia(int cant){
         if (this.energia + cant >= 100) {
             this.energia = 100;
@@ -44,6 +47,8 @@ public class Mascota {
             this.energia = this.energia + cant;
         }
     }
+
+    // METODO PARA INCREMENTAR FELICIDAD DE LA MASCOTA
     public void incrementarFelicidad(int cant){
         if (this.felicidad + cant >= 100) {
             this.felicidad = 100;
@@ -53,6 +58,7 @@ public class Mascota {
         }
     }
 
+    // METODO PARA ACTUALIZAR STATS DE MASCOTA
     public void afectar() {
         if (this.salud < 10) {
             this.felicidad = this.felicidad - 20;
@@ -67,6 +73,7 @@ public class Mascota {
         }
     }
 
+    // METODO PARA PONER A DORMIR A LA MASCOTA
     public void Dormir(){
         this.edad = this.edad + 0.5;
         this.energia = 100;

@@ -3,7 +3,7 @@ public abstract class Item {
     protected String nombre;
     protected int cantidad;
 
-    // INTSANCIACION DEL ITEM
+    // INSTANCIACION DEL ITEM
     public Item(int id, String nombre, int cantidad){
         this.id = id;
         this.nombre = nombre;
