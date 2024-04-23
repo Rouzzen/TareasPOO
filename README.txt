@@ -1,3 +1,7 @@
+Vicente Neira 202004663-8
+Diego Moyano 202004509-7
+Alvaro Soto 202004608-5
+Gabriel Lara 202330510-3
 La etapa final cuenta con los siguientes archivos:
 Comida.java, Estado.java, Inventario.java, Item.java, Juguete.java, Main.java, Mascota.java, Medicina.java.
 config.csv y MAKEFILE.
