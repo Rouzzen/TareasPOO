@@ -4,6 +4,7 @@ public class Juguete extends Item {
     }
 
     @Override
+    // APLICA ITEM JUGUETE A MASCOTA
     public void ItemAplicado(Mascota mascota) {
         mascota.incrementarFelicidad(30);
         System.out.println("Usando Juguete: " + nombre);

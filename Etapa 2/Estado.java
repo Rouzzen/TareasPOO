@@ -1,3 +1,4 @@
+// LISTA DE ESTADOS DE LA MASCOTA
 public enum Estado {
     Neutro,
     Feliz, 

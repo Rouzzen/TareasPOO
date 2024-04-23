@@ -27,6 +27,7 @@ public class Main {
         String nombre_mascota = in.nextLine();
         mascota = new Mascota(nombre_mascota);
         System.out.println("Bienvenido a tu mascota virtual, felicidades por adoptar a " + nombre_mascota);
+
         //Instancias de los items
         while (in.hasNextLine()) {
             String linea = in.nextLine();
@@ -36,16 +37,22 @@ public class Main {
             String nombreItem = item_csv[2];
             int cantidad = Integer.parseInt(item_csv[3]);
             mascota.getEstado();
+            // ALIMENTAR
             if (tipoItem.equals("Comida")) {
                 Comida comida = new Comida(id, nombreItem, cantidad);
                 comida.ItemAplicado(mascota);
-            } else if (tipoItem.equals("Medicina")) {
+            }
+            // USAR MEDICINA
+            else if (tipoItem.equals("Medicina")) {
                 Medicina medicina = new Medicina(id, nombreItem, cantidad);
                 medicina.ItemAplicado(mascota);
-            } else if (tipoItem.equals("Juguete")) {
+            }
+            // JUGAR
+            else if (tipoItem.equals("Juguete")) {
                 Juguete juguete = new Juguete(id, nombreItem, cantidad);
                 juguete.ItemAplicado(mascota);
-            } else {
+            }
+            else {
                 System.out.println("Tipo de item desconocido: " + tipoItem);
             }
             System.out.println("-----------");
@@ -66,8 +73,6 @@ public class Main {
     }
 
     public void printEstado(float step, PrintStream out){
-        /* Completar método que muestra el estado de la Mascota y del inventario
-        dependiendo de la etapa */
         if (step == 0) {
             System.out.println("-----------");
             System.out.println("Parametros");
