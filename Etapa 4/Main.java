@@ -65,8 +65,9 @@ public class Main {
             }
             out.println("MENU");
             out.println("1. Interactuar con "+ mascota.getNombre());
-            out.println("2. Continuar el paso del tiempo");
-            out.println("3. Terminar el programa");
+            out.println("2. Mostrar el inventario");
+            out.println("3. Continuar el paso del tiempo");
+            out.println("4. Terminar el programa");
             int choice1 = in.nextInt();
             in.nextLine();
             boolean running = true;
@@ -127,7 +128,6 @@ public class Main {
                                     running = false;
                                     break;
                                 }
-        
                             case 2:
                                 List<Comida> comidas = inventario.obtenerComida();
                                 if (!comidas.isEmpty()){
@@ -205,15 +205,18 @@ public class Main {
                         
                     }
                     break;
-            
                 case 2:
+                    inventario.mostrarInventario();
+                    running = false;
+                    break;
+                case 3:
                     out.println("Pasando el tiempo . . .");
                     mascota.tick();
                     tiempo = tiempo + 0.5;
                     printEstado(0, null);
                     running = false;
                     break;
-                case 3:
+                case 4:
                     out.println("Muchas gracias por jugar con "+mascota.getNombre());
                     condicion = false;
                     running = false;
@@ -223,8 +226,6 @@ public class Main {
     }
 
     public void printEstado(float step, PrintStream out){
-        /* Completar método que muestra el estado de la Mascota y del inventario
-        dependiendo de la etapa */
         if (step == 0) {
             System.out.println("-----------");
             System.out.println("Parametros");
