@@ -8,6 +8,7 @@ public class Mascota {
     private int energia;
     private int felicidad;
 
+    // INSTANCIACION STATS MASCOTA INICIAL
     public Mascota(String nombre) {
         this.nombre = nombre;
         this.edad = 0.0;
