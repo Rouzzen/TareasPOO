@@ -65,7 +65,7 @@ public class Mascota {
     public int getSalud(){
         return this.salud;
     }
-    // METODO PARA RETORNAR ENERGÍA DE MASCOTA
+    // METODO PARA RETORNAR ENERGIA DE MASCOTA
     public int getEnergia(){
         return this.energia;
     }
